@@ -1,9 +1,9 @@
 <?php require_once("../../conexao/conexao.php"); ?>
 <?php
     if( isset($_POST["nometransportadora"]) ) {
-        $nome       = utf8_decode($_POST["nometransportadora"]);
-        $endereco   = utf8_decode($_POST["endereco"]);
-        $cidade     = utf8_decode($_POST["cidade"]);
+        $nome       = $_POST["nometransportadora"];
+        $endereco   = $_POST["endereco"];
+        $cidade     = $_POST["cidade"];
         $estado     = $_POST["estados"];
         $cep        = $_POST["cep"];
         $cnpj       = $_POST["cnpj"];
@@ -94,13 +94,13 @@
                                 if($meuestado == $estado_principal) {
                         ?>
                             <option value="<?php echo $linha["estadoID"] ?>" selected>
-                                <?php echo utf8_encode($linha["nome"]) ?>
+                                <?php echo $linha["nome"] ?>
                             </option>
                         <?php
                                 } else {
                         ?>
                             <option value="<?php echo $linha["estadoID"] ?>" >
-                                <?php echo utf8_encode($linha["nome"]) ?>
+                                <?php echo $linha["nome"] ?>
                             </option>                        
                         <?php 
                                 }
